@@ -5,7 +5,6 @@ import Layout from "../shared/layout";
 import "./single-product.style.scss";
 
 const SingleProduct = ({ match, history: { push } }) => {
-    debugger
     const { products } = useContext(ProductsContext);
     const { id } = match.params;
     const [product, setProduct] = useState(null);
