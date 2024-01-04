@@ -7,7 +7,7 @@ require('dotenv').config({
 
 const CheckoutSession = require("./api/checkout")
 const webhook = require("./api/webhook")
-
+const paymentIntent = require("./api/paymentIntent")
 const app = express();
 const port = 8080;
 app.use(express.json(
@@ -37,6 +37,7 @@ app.post(
     webhook
 )   
 
+app.post("/create-payment-intent", paymentIntent.paymentIntent)
 
 app.listen(port,()=>{
     console.log(`http://localhost:${port}`)

@@ -47,7 +47,7 @@ const StripeCheckout = () => {
         const { sessionId } = response;
         //stripe.redirectToCheckout given unauthorized error solved this by adding the following code
         const { error } = await stripe.redirectToCheckout({
-            sessionId,
+            sessionId: sessionId,
         });
 
         if (error) {
